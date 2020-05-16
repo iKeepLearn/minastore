@@ -1,0 +1,24 @@
+<view class="container">
+
+	<block wx:if="{{!orderList}}">
+		<view class="no-data">
+			<image class="no-data-image" src="../../images/search.png"></image>
+			<view class="text-gray ">暂无订单</view>
+		</view>
+	</block>
+
+	<block wx:else >
+
+		<view class="flex order-item justify-between align-center padding" wx:for="{{orderList}}" wx:key="_id">
+			<view class="flex justify-center align-center" bindtap="viewDetail" data-id="{{item._id}}">
+				<text class="text-grey padding-left">{{item.product_name}} </text>
+				<text class="text-service padding-left">{{item.order_time}} </text>
+				<text class="text-grey padding-left" wx:if="{{item.payment_state == 0}}">应付金额{{item.product_price}}元 </text>
+			</view>
+			<text class="order-state {{orderState[item.payment_state].color}} padding-left flex-shrink-0" wx:if="{{item.payment_state == 0}}" bindtap="toPay" data-index="{{index}}">去支付</text>
+			<text class="order-state {{orderState[item.payment_state].color}} padding-left flex-shrink-0" wx:else  bindtap="viewDetail" data-id="{{item._id}}">{{orderState[item.payment_state].name}}</text>
+		</view>
+
+	</block>
+
+</view>

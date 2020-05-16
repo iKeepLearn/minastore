@@ -1,0 +1,7 @@
+<view class="card">
+	<image class="card-image" src="/images/me.png"></image>
+	<view class="flex jusity-between">
+		<view class="card-name">产品名称</view>
+		<button type="primary" size="mini">购买</button>
+	</view>
+</view>

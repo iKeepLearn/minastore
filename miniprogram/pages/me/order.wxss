@@ -1,0 +1,31 @@
+/* pages/me/order.wxss */
+.no-data {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 400rpx;
+}
+
+.login {
+  color: #6799FF;
+  line-height: 2;
+}
+
+.no-data-image {
+  width: 128rpx;
+  height: 128rpx;
+}
+
+.order-state {
+  padding: 10rpx;
+  text-align: right;
+  color: white;
+  height: 40rpx;
+  line-height: 40rpx;
+  border-radius: 10rpx;
+}
+
+.order-item {
+  width: 100%;
+}

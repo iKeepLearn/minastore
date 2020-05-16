@@ -1,0 +1,10 @@
+.card{
+  display: flex;
+  width: 98%;
+  margin: 20rpx auto;
+  border: 2rpx solid #cecece;
+}
+
+.card-image{
+  max-height: 300rpx;
+}

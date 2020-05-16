@@ -1,0 +1,10 @@
+<view class="card padding " wx:for="{{product}}" wx:key="_id">
+	<image class="card-image" src="{{item.image}}"></image>
+	<view class="flex flex-column justify-between flex-shrink-0 padding">
+		<view class="card-name flex-grow-1">{{item.name}}</view>
+		<view class="flex justify-center align-center ">
+			<view class="flex-grow-1">{{item.price}}</view>
+			<button class="" type="primary" size="mini" bindtap="buy" data-id="{{item._id}}">购买</button>
+		</view>
+	</view>
+</view>

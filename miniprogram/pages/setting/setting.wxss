@@ -1,0 +1,59 @@
+.order-state {
+  padding: 10rpx;
+  text-align: right;
+  color: white;
+  height: 40rpx;
+  line-height: 40rpx;
+  border-radius: 10rpx;
+}
+
+.order-item {
+  width: 100%;
+}
+
+.search-bar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: white;
+  min-height: 60rpx;
+  line-height: 60rpx;
+  border-bottom: 1rpx solid #DBDBDB;
+  padding-bottom: 20rpx;
+
+}
+
+.search-type,
+.search-state {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.search {
+  width: 128rpx;
+  height: 128rpx;
+}
+
+.no-data {
+  display: flex;
+  flex-direction: column;
+  width: 260rpx;
+  justify-content: center;
+  align-items: center;
+  margin: 20rpx auto;
+}
+
+.state-bar{
+  width: 98%;
+  margin: 0 auto;
+}
+
+.tab-item{
+  width: 20%;
+  text-align: center;
+}
+
+.cur{
+  border-bottom: 2rpx solid orange;
+}
