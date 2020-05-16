@@ -21,9 +21,13 @@ Page({
       mask: true
     })
 
-    db.collection("orders").where({
+    db.collection("orders")
+    .where({
       _openid: "{openid}"
-    }).get().then(res => {
+    })
+    .orderBy("order_time", "desc")
+    .get()
+    .then(res => {
       let orderList = res.data
       for (let item of orderList) {
         item.order_time = util.formatTime(item.order_time)
