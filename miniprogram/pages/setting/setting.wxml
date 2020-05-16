@@ -19,7 +19,11 @@
 			<text class="text-service padding-left">{{item.order_time}} </text>
 			<text class="text-grey padding-left" wx:if="{{item.payment_state == 0}}">应付金额{{item.product_price}}元 </text>
 		</view>
-    			<text class="order-state {{orderState[item.payment_state].color}} padding-left flex-shrink-0" wx:if="{{item.payment_state == 1}}" bindtap="ship" data-id="{{item._id}}">去发货</text>
-		<text class="order-state {{orderState[item.payment_state].color}} padding-left flex-shrink-0"  wx:else bindtap="viewDetail" data-id="{{item._id}}">{{orderState[item.payment_state].name}}</text>
+		<view class="flex flex-column flex-shrink-0">
+			<text class="order-state {{orderState[item.payment_state].color}} padding-left " wx:if="{{item.payment_state == 0}}" bindtap="closeOrder" data-index="{{index}}">关闭订单</text>
+			<text class="order-state {{orderState[item.payment_state].color}} padding-left " wx:elif="{{item.payment_state == 1}}" bindtap="ship" data-id="{{item._id}}">去发货</text>
+			<text class="order-state {{orderState[item.payment_state].color}} padding-left "  wx:else bindtap="viewDetail" data-id="{{item._id}}">{{orderState[item.payment_state].name}}</text>
+			<text class="order-state padding-left margin-top bg-green" bindtap="queryOrder" data-orderno="{{item.order_no}}">查询支付状态</text>
+		</view>
 	</view>
 </block>

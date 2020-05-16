@@ -207,3 +207,11 @@ view {
 .bg-orange{
   background-color: orange;
 }
+
+.bg-grey{
+  background-color: #cecece;
+}
+
+.margin-top{
+  margin-top: 20rpx;
+}

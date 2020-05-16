@@ -31,6 +31,9 @@ const orderState = [{
 }, {
   "name": "已完成",
   "color": "bg-green"
+}, {
+  "name": "已关闭",
+  "color": "bg-grey"
 }]
 
 

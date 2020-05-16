@@ -75,12 +75,54 @@ Page({
       data: {
         method: "update",
         orderId: id,
-        orderState:2
+        orderState: 2
       }
     }).then(res => {
       this.getOrders(orderState)
     })
 
+  },
+
+  closeOrder(e) {
+    let index = e.currentTarget.dataset.index * 1
+    let orderList = this.data.orderList
+    let order = orderList[index]
+    let orderState = this.data.TabCur
+    wx.cloud.callFunction({
+      name: "wechatPay",
+      data: {
+        method: "closeOrder",
+        orderId: order._id,
+        orderNo: order.order_no
+      }
+    }).then(res => {
+      console.log(res)
+      this.getOrders(orderState)
+    })
+
+  },
+
+  queryOrder(e) {
+    let orderNo = e.currentTarget.dataset.orderno
+    wx.cloud.callFunction({
+      name: "wechatPay",
+      data: {
+        method: "queryOrder",
+        orderNo
+      }
+    }).then(res => {
+      if (res.result.returnCode === "SUCCESS") {
+        wx.showToast({
+          title: res.result.tradeStateDesc,
+          icon: "none"
+        })
+      } else {
+        wx.showToast({
+          title: '未查到该订单支付信息',
+          icon: "none"
+        })
+      }
+    })
   },
 
 

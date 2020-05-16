@@ -12,6 +12,7 @@ Page({
           product: res.data
         })
       })
+      
   },
 
   buy(e) {
@@ -19,9 +20,11 @@ Page({
     wx.cloud.callFunction({
       name: "wechatPay",
       data: {
+        method:"unifiedOrder",
         productId
       }
     }).then(res => {
+      console.log(res)
       let prepay = res.result.payment
       this.pay(prepay)
     })
